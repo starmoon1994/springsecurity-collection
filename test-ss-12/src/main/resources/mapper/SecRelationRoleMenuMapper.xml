@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.company.testss12.mapper.SecRelationRoleMenuMapper">
+    <resultMap id="BaseResultMap" type="com.company.testss12.entity.SecRelationRoleMenu">
+    </resultMap>
+
+    <!--<sql id="BaseSql" >-->
+
+    <!--</sql>-->
+
+    <!--<select id="selectListByCondition" resultMap="BaseResultMap">-->
+
+    <!--</select>-->
+
+    <!--<insert id="insertOne" parameterMap="BaseResultMap">-->
+
+    <!--</insert>-->
+
+    <!--<select id="findByUsername" resultMap="BaseResultMap">-->
+        <!--SELECT  * FROM  sec_user-->
+        <!--WHERE username = #{username}-->
+    <!--</select>-->
+    <select id="selectList" resultMap="BaseResultMap">
+        SELECT * FROM sec_relation_role_menu
+    </select>
+
+</mapper>

@@ -1,0 +1,101 @@
+2018/07/20 17:11:19.879 DEBUG [RMI TCP Connection(4)-127.0.0.1] [Statement:134] : {conn-10005, stmt-20000, rs-50000} query executed. 183.098241 millis. /* ping */ SELECT 1
+2018/07/20 17:12:40.332 DEBUG [RMI TCP Connection(6)-127.0.0.1] [Statement:134] : {conn-10005, stmt-20000, rs-50000} query executed. 55.446164 millis. /* ping */ SELECT 1
+2018/07/20 17:12:55.192 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20001} created. SELECT  * FROM  sec_user
+        WHERE username = ?
+2018/07/20 17:12:55.197 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20001} Parameters : [admin]
+2018/07/20 17:12:55.197 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20001} Types : [VARCHAR]
+2018/07/20 17:12:55.199 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20001} executed. 2.284105 millis. SELECT  * FROM  sec_user
+        WHERE username = ?
+2018/07/20 17:12:55.204 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20001} clearParameters. 
+2018/07/20 17:12:55.222 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20002} created. SELECT * FROM sec_role
+         WHERE id in
+            (
+                ?
+            ,
+                ?
+            )
+2018/07/20 17:12:55.223 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20002} Parameters : [1, 6]
+2018/07/20 17:12:55.224 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20002} Types : [INTEGER, INTEGER]
+2018/07/20 17:12:55.244 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20002} executed. 20.949764 millis. SELECT * FROM sec_role
+         WHERE id in
+            (
+                ?
+            ,
+                ?
+            )
+2018/07/20 17:12:55.245 DEBUG [http-nio-8080-exec-1] [Statement:134] : {conn-10005, pstmt-20002} clearParameters. 
+2018/07/20 17:13:57.404 DEBUG [RMI TCP Connection(7)-127.0.0.1] [Statement:134] : {conn-10005, stmt-20000, rs-50000} query executed. 62.62847 millis. /* ping */ SELECT 1
+2018/07/20 17:14:02.566 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} created. SELECT  * FROM  sec_user
+        WHERE username = ?
+2018/07/20 17:14:02.569 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} Parameters : [admin]
+2018/07/20 17:14:02.569 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} Types : [VARCHAR]
+2018/07/20 17:14:02.571 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} executed. 1.861434 millis. SELECT  * FROM  sec_user
+        WHERE username = ?
+2018/07/20 17:14:02.583 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} clearParameters. 
+2018/07/20 17:14:02.603 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} created. SELECT * FROM sec_role
+         WHERE id in
+            (
+                ?
+            ,
+                ?
+            )
+2018/07/20 17:14:02.604 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} Parameters : [1, 6]
+2018/07/20 17:14:02.605 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} Types : [INTEGER, INTEGER]
+2018/07/20 17:14:02.607 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} executed. 2.325471 millis. SELECT * FROM sec_role
+         WHERE id in
+            (
+                ?
+            ,
+                ?
+            )
+2018/07/20 17:14:02.608 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} clearParameters. 
+2018/07/20 17:16:24.712 DEBUG [RMI TCP Connection(8)-127.0.0.1] [Statement:134] : {conn-10005, stmt-20000, rs-50000} query executed. 60.310152 millis. /* ping */ SELECT 1
+2018/07/20 17:16:39.132 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} created. SELECT  * FROM  sec_user
+        WHERE username = ?
+2018/07/20 17:16:39.134 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} Parameters : [admin]
+2018/07/20 17:16:39.134 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} Types : [VARCHAR]
+2018/07/20 17:16:39.136 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} executed. 2.505861 millis. SELECT  * FROM  sec_user
+        WHERE username = ?
+2018/07/20 17:16:39.142 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20001} clearParameters. 
+2018/07/20 17:16:39.159 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} created. SELECT * FROM sec_role
+         WHERE id in
+            (
+                ?
+            ,
+                ?
+            )
+2018/07/20 17:16:39.159 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} Parameters : [1, 6]
+2018/07/20 17:16:39.160 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} Types : [INTEGER, INTEGER]
+2018/07/20 17:16:39.162 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} executed. 2.281617 millis. SELECT * FROM sec_role
+         WHERE id in
+            (
+                ?
+            ,
+                ?
+            )
+2018/07/20 17:16:39.163 DEBUG [http-nio-8080-exec-2] [Statement:134] : {conn-10005, pstmt-20002} clearParameters. 
+2018/07/20 18:08:14.215 DEBUG [RMI TCP Connection(4)-127.0.0.1] [Statement:134] : {conn-10005, stmt-20000, rs-50000} query executed. 201.246678 millis. /* ping */ SELECT 1
+2018/07/20 18:08:45.465 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20001} created. SELECT  * FROM  sec_user
+        WHERE username = ?
+2018/07/20 18:08:45.468 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20001} Parameters : [admin]
+2018/07/20 18:08:45.468 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20001} Types : [VARCHAR]
+2018/07/20 18:08:45.683 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20001} executed. 215.792923 millis. SELECT  * FROM  sec_user
+        WHERE username = ?
+2018/07/20 18:08:45.697 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20001} clearParameters. 
+2018/07/20 18:08:45.731 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20002} created. SELECT * FROM sec_role
+         WHERE id in
+            (
+                ?
+            ,
+                ?
+            )
+2018/07/20 18:08:45.733 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20002} Parameters : [1, 6]
+2018/07/20 18:08:45.733 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20002} Types : [INTEGER, INTEGER]
+2018/07/20 18:08:45.851 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20002} executed. 118.70382 millis. SELECT * FROM sec_role
+         WHERE id in
+            (
+                ?
+            ,
+                ?
+            )
+2018/07/20 18:08:45.854 DEBUG [http-nio-8080-exec-5] [Statement:134] : {conn-10005, pstmt-20002} clearParameters. 

@@ -1,0 +1,10 @@
+安全框架SpringSecurity的基本应用
+
+test-ss-11 
+
+集成spring security 
+自定义认证成功和认证失败的handler
+自定义访问拒绝的handler（权限不足）
+自定义退出登录成功的handler
+MockUserList是模拟用户列表
+authorizeRequests对url进行统一的权限要求配置
