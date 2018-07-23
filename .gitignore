@@ -36,4 +36,6 @@ target/
 *.log
 
 
+file_logs/
+
 
