@@ -146,7 +146,7 @@
             <version>1.9.3</version>
         </dependency>
 
-        打包相关
+        <!--打包相关-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-tomcat</artifactId>
@@ -158,7 +158,7 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-        打包相关
+        <!--打包相关-->
 
         <dependency>
             <groupId>org.springframework.session</groupId>
@@ -186,6 +186,7 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
         </dependency>
+        <!--redis依赖-->
 
     </dependencies>
 
