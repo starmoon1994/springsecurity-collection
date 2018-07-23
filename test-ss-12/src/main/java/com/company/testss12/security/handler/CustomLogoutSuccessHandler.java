@@ -1,5 +1,6 @@
-package com.company.testss12.security;
+package com.company.testss12.security.handler;
 
+import com.company.testss12.security.CustomSecurityProperties;
 import com.company.testss12.support.RetVO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;

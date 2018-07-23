@@ -7,8 +7,10 @@ import com.company.testss12.entity.SecUser;
 import com.company.testss12.entity.vo.MenuVo;
 import com.company.testss12.mapper.SecMenuMapper;
 import com.company.testss12.service.SecMenuService;
+import com.company.testss12.service.SecUserService;
 import org.apache.commons.beanutils.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -28,6 +30,9 @@ public class SecMenuServiceImpl implements SecMenuService {
 
     @Autowired
     private SecMenuDao secMenuDao;
+
+    @Autowired
+    private SecUserService secUserService;
 
     @Override
     public List<SecMenu> getStringPermissionList(SecUser secUser) {
@@ -146,5 +151,22 @@ public class SecMenuServiceImpl implements SecMenuService {
     @Override
     public List<SecMenu> getList(int state) {
         return secMenuDao.getList(state);
+    }
+
+    @Override
+    public  List<MenuVo> getUserMenuList(UserDetails userDetails) {
+//        List<SecMenu> secMenuList = secMenuMapper.selectlistModuleByRoleIds(userLogined.getRoleIds());
+
+        String username = userDetails.getUsername();
+
+        SecUser secUser = secUserService.findByUsername(username);
+
+        // 获取有效菜单
+        List<SecMenu> secMenuList = this.getStringPermissionList(secUser);
+
+        // 组装菜单
+        List<MenuVo> menuVos = this.handleMenuList(secMenuList);
+
+        return menuVos;
     }
 }

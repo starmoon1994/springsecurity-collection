@@ -52,4 +52,9 @@ public class SecUserServiceImpl implements SecUserService {
 
         return secUserDao.selectList(state);
     }
+
+    @Override
+    public SecUser findByUsername(String username) {
+        return secUserDao.findByUsername(username);
+    }
 }

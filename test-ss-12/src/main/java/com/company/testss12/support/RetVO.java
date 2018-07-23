@@ -10,18 +10,16 @@ public class RetVO {
     }
 
     private int code = 0;
-
     private String msg;
     private Object data;
     private Object page;
-    
-    public RetVO failure(String _msg){
+
+    public RetVO failure(String _msg) {
         this.code = -1;
         this.msg = _msg;
         return this;
     }
 
-    private String callbackUrl;
 
     public int getCode() {
         return code;
@@ -47,22 +45,13 @@ public class RetVO {
         this.data = data;
     }
 
-    public String getCallbackUrl() {
-        return callbackUrl;
+    public Object getPage() {
+        return page;
     }
 
-    public void setCallbackUrl(String callbackUrl) {
-        this.callbackUrl = callbackUrl;
+    public void setPage(Object page) {
+        this.page = page;
     }
 
-	public Object getPage() {
-		return page;
-	}
-
-	public void setPage(Object page) {
-		this.page = page;
-	}
-    
-    
 
 }

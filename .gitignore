@@ -33,4 +33,7 @@ target/
 */target/
 
 
+*.log
+
+
 

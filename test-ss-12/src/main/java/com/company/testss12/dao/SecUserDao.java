@@ -18,4 +18,5 @@ public interface SecUserDao {
 
     int removeUser(Integer uid);
 
+    SecUser findByUsername(String username);
 }

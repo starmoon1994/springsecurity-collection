@@ -1,6 +1,7 @@
-package com.company.testss12.security;
+package com.company.testss12.security.handler;
 
 
+import com.company.testss12.security.CustomSecurityProperties;
 import com.company.testss12.support.RetVO;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +33,7 @@ public class CustomAccessDeniedHandler implements AccessDeniedHandler {
         if (CustomSecurityProperties.loginResponseType.equals("JSON")) {
 
             RetVO retVO = new RetVO();
-            retVO.setMsg("权限不足，请联系管理员：" + exception.getLocalizedMessage() + exception.getMessage());
+            retVO.failure("权限不足，请联系管理员：" + exception.getLocalizedMessage() + exception.getMessage());
             retVO.setData(exception.getCause());
             response.setStatus(HttpServletResponse.SC_FORBIDDEN);
             response.setContentType("application/json;charset=UTF-8");

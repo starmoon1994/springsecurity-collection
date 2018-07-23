@@ -44,4 +44,8 @@ public class SecUserDaoImpl implements SecUserDao {
         return secUserMapper.removeUser(uid);
     }
 
+    @Override
+    public SecUser findByUsername(String username) {
+        return secUserMapper.findByUsername(username);
+    }
 }

@@ -6,7 +6,7 @@ import com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter;
 import com.company.testss12.support.page.PageFilter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
+import org.springframework.boot.autoconfigure.web.HttpMessageConverters;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,12 +14,18 @@ import org.springframework.http.MediaType;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import java.util.ArrayList;
 import java.util.List;
 
+//import org.springframework.boot.autoconfigure.http.HttpMessageConverters;
+
 @Configuration
-public class CustomWebMvcConfigurer  implements WebMvcConfigurer {
+public class CustomWebMvcConfigurer extends WebMvcConfigurerAdapter {
+
+    // springboot1.5.6用WebMvcConfigurerAdapter  springboot2.0.3用WebMvcConfigurer
+
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {

@@ -1,8 +1,6 @@
-package com.company.testss12.support;
+package com.company.testss12.support.exception;
 
 
-import com.company.testss12.support.exception.BusinessException;
-import com.company.testss12.support.exception.UnloginException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.access.AccessDeniedException;
@@ -37,7 +35,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(value = AccessDeniedException.class)
     public void AccessDeniedExceptionHandler(HttpServletRequest req, HttpServletResponse response, Exception e) throws Exception {
         logger.error("AccessDeniedException异常 权限不足", e);
-        logger.error("AccessDeniedException异常 req.getRemoteHost()",req.getRemoteHost());
+        logger.error("AccessDeniedException异常 req.getRemoteHost()", req.getRemoteHost());
 
         response.sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
     }

@@ -71,13 +71,10 @@ public class CustomUserDetailsService implements UserDetailsService {
             roleNames[i] = secRoleList.get(i).getCode();
         }
 
-
         List<GrantedAuthority> grantedAuthorityList = AuthorityUtils.createAuthorityList(roleNames);
 
         // 构建 org.springframework.security.core.userdetails.User
-        User user = new User(username, secUser.getPassword(), true,
-                accountNonExpired, credentialsNonExpired, accountNonLocked, grantedAuthorityList);
-
+        User user = new User(username, secUser.getPassword(), true, accountNonExpired, credentialsNonExpired, accountNonLocked, grantedAuthorityList);
 
         return user;
     }

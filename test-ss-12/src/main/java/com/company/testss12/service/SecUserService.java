@@ -18,4 +18,6 @@ public interface SecUserService {
     SecUser getUser(long id);
 
     List<SecUser> getList(int state);
+
+    SecUser findByUsername(String username);
 }

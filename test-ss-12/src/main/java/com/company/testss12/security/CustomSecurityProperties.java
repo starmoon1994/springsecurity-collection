@@ -14,10 +14,11 @@ public class CustomSecurityProperties {
     public static final String formLogin_usernameParameter = "username";
     public static final String formLogin_passwordParameter = "password";
     public static final String logout_logoutUrl = "/logout";
+    public static final String invalidSessionUrl = "/sessionInvalidSessionUrl";
+    public static final String expiredSessionUrl = "/sessionExpiredUrl";
     public static final String[] exclusivePaths = {"/css/**", "/js/**", "/fonts/**", "/favicon.ico", "/index", "/needlogin", "/loginPage", "/401", "/404", "/nopermission", "/authentication/form"};
     // cookie名字列表 退出时需要清除
-    public static final String[] cookieNames = {"JSESSIONID","cname1", "cnam2"};
-
+    public static final String[] cookieNames = {"JSESSIONID", "cname1", "cnam2"};
 
 
 }

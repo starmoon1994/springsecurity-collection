@@ -4,6 +4,7 @@ package com.company.testss12.service;
 import com.company.testss12.entity.SecMenu;
 import com.company.testss12.entity.SecUser;
 import com.company.testss12.entity.vo.MenuVo;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.List;
 
@@ -31,4 +32,6 @@ public interface SecMenuService {
     SecMenu getMenu(long id);
 
     List<SecMenu> getList(int state);
+
+    List<MenuVo> getUserMenuList(UserDetails userDetails);
 }
