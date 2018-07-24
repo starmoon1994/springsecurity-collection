@@ -100,6 +100,7 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-security</artifactId>
+            <version>1.5.14.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -160,11 +161,7 @@
         </dependency>
         <!--打包相关-->
 
-        <dependency>
-            <groupId>org.springframework.session</groupId>
-            <artifactId>spring-session</artifactId>
-            <version>1.3.1.RELEASE</version>
-        </dependency>
+
 
         <!--redis依赖-->
         <dependency>
@@ -186,13 +183,24 @@
             <groupId>redis.clients</groupId>
             <artifactId>jedis</artifactId>
         </dependency>
+        <!--redis依赖-->
+
+        <!--springsession的依赖-->
+        <dependency>
+            <groupId>org.springframework.session</groupId>
+            <artifactId>spring-session</artifactId>
+            <version>1.3.1.RELEASE</version>
+        </dependency>
+        <!--springsession的依赖-->
+
+        <!--spring-security单元测试-->
         <dependency>
             <groupId>org.springframework.security</groupId>
             <artifactId>spring-security-test</artifactId>
             <version>4.2.3.RELEASE</version>
             <scope>test</scope>
         </dependency>
-        <!--redis依赖-->
+        <!--spring-security单元测试-->
 
     </dependencies>
 
@@ -235,6 +243,9 @@
             <!--</snapshots>-->
         <!--</pluginRepository>-->
     <!--</pluginRepositories>-->
+
+
+
 
 
 </project>

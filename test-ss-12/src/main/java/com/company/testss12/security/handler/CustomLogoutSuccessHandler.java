@@ -18,20 +18,15 @@ public class CustomLogoutSuccessHandler extends SimpleUrlLogoutSuccessHandler {
     @Autowired
     private ObjectMapper objectMaper;
 
-    @Autowired
-    private CustomSecurityProperties customSecurityProperties;
-
     @Override
     public void onLogoutSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication) throws IOException, ServletException {
 
         if (CustomSecurityProperties.loginResponseType.equals("JSON")) {
             RetVO retVO = new RetVO();
             retVO.setMsg("退出登录成功");
-            retVO.setData(authentication);
             response.setContentType("application/json;charset=UTF-8");
             response.getWriter().write(objectMaper.writeValueAsString(retVO));
         } else {
-
             super.handle(request, response, authentication);
         }
     }

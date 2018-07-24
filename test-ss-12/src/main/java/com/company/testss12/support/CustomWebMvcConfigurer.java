@@ -30,8 +30,6 @@ public class CustomWebMvcConfigurer extends WebMvcConfigurerAdapter {
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {
         // 指定注册一些url到视图注册器
-        registry.addViewController("/login").setViewName("loginPage");
-        registry.addViewController("/index").setViewName("indexPage");
         registry.addViewController("/401").setViewName("401Page");
         registry.addViewController("/404").setViewName("404Page");
         registry.addViewController("/nopermission").setViewName("nopermissionPage");

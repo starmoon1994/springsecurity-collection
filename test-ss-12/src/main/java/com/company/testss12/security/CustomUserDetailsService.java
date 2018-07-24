@@ -71,6 +71,8 @@ public class CustomUserDetailsService implements UserDetailsService {
             roleNames[i] = secRoleList.get(i).getCode();
         }
 
+//        List<GrantedAuthority> grantedAuthorityList = AuthorityUtils.createAuthorityList("ROLE_ADMIN","ROLE_PM","ROLE_DEV");
+
         List<GrantedAuthority> grantedAuthorityList = AuthorityUtils.createAuthorityList(roleNames);
 
         // 构建 org.springframework.security.core.userdetails.User

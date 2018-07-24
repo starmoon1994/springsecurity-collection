@@ -62,10 +62,11 @@ public class CustomApplicationSecurityConfig extends WebSecurityConfigurerAdapte
     // 配置session相关
     private void configSession(HttpSecurity http) throws Exception {
         http.sessionManagement()
-                .invalidSessionStrategy(invalidSessionStrategy)
+                .invalidSessionStrategy(invalidSessionStrategy) //session无效处理策略
                 .invalidSessionUrl(CustomSecurityProperties.invalidSessionUrl)
-                .maximumSessions(1)
-                .expiredSessionStrategy(sessionInformationExpiredStrategy) //session失效策略
+                .maximumSessions(1)  //同一用户最大session数
+                .maxSessionsPreventsLogin(false) //达到最大数禁止登录（预防并发登录）
+                .expiredSessionStrategy(sessionInformationExpiredStrategy) //session过期处理策略
                 .expiredUrl(CustomSecurityProperties.expiredSessionUrl);
     }
 
@@ -100,6 +101,8 @@ public class CustomApplicationSecurityConfig extends WebSecurityConfigurerAdapte
         http.logout()
                 .logoutUrl(CustomSecurityProperties.logout_logoutUrl)
                 .permitAll()
+                .clearAuthentication(true)
+                .invalidateHttpSession(true)
                 .deleteCookies(CustomSecurityProperties.cookieNames)
                 .logoutSuccessHandler(customLogoutSuccessHandler);
     }
