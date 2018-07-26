@@ -4,7 +4,7 @@
 package com.company.testspringsecurity1.security.support;
 
 /**
- * @author zhailiang
+ * @author starmoon1994
  *
  */
 public class SessionProperties {

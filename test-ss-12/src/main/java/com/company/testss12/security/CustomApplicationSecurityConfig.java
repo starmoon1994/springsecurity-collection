@@ -92,6 +92,7 @@ public class CustomApplicationSecurityConfig extends WebSecurityConfigurerAdapte
                 .permitAll(true)
                 .failureHandler(customAuthenticationFailureHandler)
                 .successHandler(customAuthenticationSuccessHandler);
+
     }
 
 

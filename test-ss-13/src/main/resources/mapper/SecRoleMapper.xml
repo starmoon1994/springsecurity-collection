@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.company.testss13.mapper.SecRoleMapper">
+    <resultMap id="BaseResultMap" type="com.company.testss13.entity.SecRole">
+    </resultMap>
+
+    <sql id="BaseSql">
+        id,name,code,remark
+    </sql>
+
+    <!--<select id="selectListByCondition" resultMap="BaseResultMap">-->
+
+    <!--</select>-->
+
+    <!--<insert id="insertOne" parameterMap="BaseResultMap">-->
+
+    <!--</insert>-->
+
+    <select id="selectList" resultMap="BaseResultMap">
+        SELECT * FROM sec_role
+    </select>
+
+    <select id="selectListByRoleIds" resultType="SecRole" parameterType="java.util.Arrays">
+        SELECT * FROM sec_role
+        <where>
+            id in
+            <foreach item="id" collection="array" separator="," open="(" close=")" index="">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+
+    <select id="getList" resultMap="BaseResultMap">
+        SELECT * FROM sec_role
+        <where>
+            <if test="state != 0">state = #{state}</if>
+        </where>
+    </select>
+
+    <select id="selectOne" resultMap="BaseResultMap">
+        SELECT * FROM sec_role
+        <where>
+            <if test="id != 0">id = #{id}</if>
+        </where>
+    </select>
+
+    <insert id="addOne" useGeneratedKeys="true" keyProperty="id" keyColumn="id">
+        INSERT INTO sec_role
+        ( name,code,remark)
+        VALUES
+        (#{name},#{code},#{remark})
+    </insert>
+
+    <update id="updateOne">
+        UPDATE  sec_role SET
+        name=#{name},
+        code=#{code},
+        remark=#{remark}
+        WHERE id = #{id}
+    </update>
+
+
+    <delete id="removeRole">
+        DELETE FROM sec_role WHERE id=#{id}
+    </delete>
+
+    <select id="getRoleMenuRelationList" resultType="SecRelationRoleMenu">
+        SELECT id , role_id as roleId , menu_id as menuId , acl FROM sec_relation_role_menu
+        <where>
+            <if test="roleId != 0">and role_id = #{roleId}</if>
+            <if test="menuId != 0">and menu_id = #{menuId}</if>
+        </where>
+    </select>
+
+    <insert id="addRoleMenuRel" parameterType="SecRelationRoleMenu" useGeneratedKeys="true" keyColumn="id"
+            keyProperty="id">
+        INSERT INTO sec_relation_role_menu
+        ( id,role_id,menu_id,acl)
+        VALUES
+        (#{id},#{roleId},#{menuId},#{acl})
+    </insert>
+
+    <update id="updateRoleMenuRel">
+        UPDATE  sec_relation_role_menu SET
+        role_id = #{roleId},
+        menu_id = #{menuId},
+        acl = #{acl}
+        WHERE id = #{id}
+    </update>
+
+</mapper>

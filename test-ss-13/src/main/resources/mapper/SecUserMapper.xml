@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.company.testss13.mapper.SecUserMapper">
+    <resultMap id="BaseResultMap" type="com.company.testss13.entity.SecUser">
+        <id column="uid" property="uid" jdbcType="INTEGER"/>
+        <result column="roleIds" property="roleIds"
+                typeHandler="com.company.testss13.support.dbhandler.IntegerArrayHandler"/>
+        <result column="menuIds" property="menuIds"
+                typeHandler="com.company.testss13.support.dbhandler.IntegerArrayHandler"/>
+    </resultMap>
+
+    <!--<sql id="BaseSql" >-->
+
+    <!--</sql>-->
+
+    <!--<select id="selectListByCondition" resultMap="BaseResultMap">-->
+
+    <!--</select>-->
+
+    <select id="selectList" resultMap="BaseResultMap">
+        SELECT * FROM sec_user
+        <where>
+            <if test="state != 0">state = #{state}</if>
+        </where>
+    </select>
+
+    <select id="selectOne" resultMap="BaseResultMap">
+        SELECT * FROM sec_user
+        <where>
+            <if test="uid != 0">uid = #{uid}</if>
+        </where>
+    </select>
+
+    <insert id="addOne" useGeneratedKeys="true" keyColumn="uid" keyProperty="uid">
+        INSERT INTO sec_user
+        (name,username,password,salt,state,roleIds,menuIds,expireTime,createTime,modifyTime)
+        VALUES
+        (#{name},#{username},#{password},#{salt},#{state},
+        #{roleIds,typeHandler=com.company.testss13.support.dbhandler.IntegerArrayHandler},
+        #{menuIds,typeHandler=com.company.testss13.support.dbhandler.IntegerArrayHandler},
+        #{expireTime},#{createTime},#{modifyTime})
+    </insert>
+
+    <update id="updateOne" parameterType="SecUser">
+        UPDATE sec_user SET
+		name=#{name},
+		username=#{username},
+		password=#{password},
+		salt=#{salt},
+		state=#{state},
+		roleIds=#{roleIds,typeHandler=com.company.testss13.support.dbhandler.IntegerArrayHandler},
+        menuIds=#{menuIds,typeHandler=com.company.testss13.support.dbhandler.IntegerArrayHandler},
+		expireTime=#{expireTime},modifyTime=#{modifyTime} WHERE uid=#{uid}
+    </update>
+
+    <select id="findByUsername" resultMap="BaseResultMap">
+        SELECT  * FROM  sec_user
+        WHERE username = #{username}
+    </select>
+
+    <delete id="removeUser">
+        DELETE FROM sec_user WHERE uid=#{uid}
+    </delete>
+
+</mapper>

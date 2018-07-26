@@ -15,7 +15,7 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 /**
- * @author zhailiang
+ * @author starmoon1994
  */
 @Component("customUserDetailsService")
 public class CustomUserDetailsService implements UserDetailsService {

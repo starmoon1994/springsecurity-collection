@@ -10,7 +10,7 @@ import javax.servlet.ServletException;
 import java.io.IOException;
 
 /**
- * @author zhailiang
+ * @author starmoon1994
  *
  */
 public class CustomExpiredSessionStrategy extends AbstractSessionStrategy implements SessionInformationExpiredStrategy {
@@ -28,7 +28,7 @@ public class CustomExpiredSessionStrategy extends AbstractSessionStrategy implem
 	}
 	
 	/* (non-Javadoc)
-	 * @see com.imooc.security.browser.session.AbstractSessionStrategy#isConcurrency()
+	 * @see com.company.testss13.security.browser.session.AbstractSessionStrategy#isConcurrency()
 	 */
 	@Override
 	protected boolean isConcurrency() {

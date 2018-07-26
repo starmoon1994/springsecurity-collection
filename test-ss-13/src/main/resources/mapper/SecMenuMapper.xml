@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.company.testss13.mapper.SecMenuMapper">
+    <resultMap id="BaseResultMap" type="com.company.testss13.entity.SecMenu">
+        <result column="permission" property="permission"
+                typeHandler="com.company.testss13.support.dbhandler.StringListHandler"/>
+    </resultMap>
+
+    <!--<sql id="BaseSql" >-->
+
+    <!--</sql>-->
+
+    <select id="selectList" resultMap="BaseResultMap">
+        SELECT * FROM sec_menu
+    </select>
+
+    <select id="selectListByMenuIds" resultMap="BaseResultMap" parameterType="java.util.Arrays">
+        SELECT * FROM sec_menu
+        <where>
+            id in
+            <foreach item="id" collection="array" separator="," open="(" close=")" index="">
+                #{id}
+            </foreach>
+        </where>
+    </select>
+
+    <select id="selectMenuIdListByRoleId" resultType="integer">
+        SELECT menu_id FROM sec_relation_role_menu WHERE role_id = #{id}
+    </select>
+
+    <select id="selectlistModuleByRoleIds" resultMap="BaseResultMap">
+        SELECT * FROM sec_menu WHERE id in(
+        select menu_id from sec_relation_role_menu where role_id in
+        <foreach collection="array" item="roleId" index="index" open="(" close=")" separator=",">
+            #{roleId}
+        </foreach>
+        and acl = 1
+        ) order by pid,orderNo
+    </select>
+
+    <insert id="addOne" keyColumn="id" keyProperty="id" parameterType="SecMenu">
+        INSERT INTO sec_menu
+        ( id,title,name,path,component,ico,url,orderNo,state,pid,resourceType,permission)
+        VALUES
+        (#{id},#{title},#{name},#{path},#{component},#{ico},#{url},#{orderNo},#{state},#{pid},#{resourceType},#{permission,typeHandler=com.company.testss13.support.dbhandler.StringListHandler})
+        ON DUPLICATE KEY
+        UPDATE
+        title=#{title},
+        name=#{name},
+        path=#{path},
+        component=#{component},
+        ico=#{ico},
+        url=#{url},
+        orderNo=#{orderNo},
+        state=#{state},
+        pid=#{pid},
+        resourceType=#{resourceType},
+        permission=#{permission,typeHandler=com.company.testss13.support.dbhandler.StringListHandler}
+    </insert>
+
+    <update id="updateOne" parameterType="SecMenu">
+        UPDATE  sec_menu SET
+        title=#{title},
+        name=#{name},
+        path=#{path},
+        component=#{component},
+        ico=#{ico},
+        url=#{url},
+        orderNo=#{orderNo},
+        state=#{state},
+        pid=#{pid},
+        resourceType=#{resourceType},
+        permission=#{permission,typeHandler=com.company.testss13.support.dbhandler.StringListHandler}
+        WHERE id = #{id}
+    </update>
+
+    <delete id="removeOne">
+        DELETE FROM sec_menu WHERE id=#{id}
+    </delete>
+
+    <select id="getOne" resultMap="BaseResultMap">
+        SELECT * FROM sec_menu
+        <where>
+            <if test="id != 0">id = #{id}</if>
+        </where>
+    </select>
+
+    <select id="getList" resultMap="BaseResultMap">
+        SELECT * FROM sec_menu
+        <where>
+            <if test="state != 0">state = #{state}</if>
+        </where>
+    </select>
+
+
+</mapper>

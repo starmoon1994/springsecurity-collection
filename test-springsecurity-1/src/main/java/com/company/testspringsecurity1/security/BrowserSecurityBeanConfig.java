@@ -14,7 +14,7 @@ import org.springframework.security.web.session.InvalidSessionStrategy;
 import org.springframework.security.web.session.SessionInformationExpiredStrategy;
 
 /**
- * @author zhailiang
+ * @author starmoon1994
  */
 @Configuration
 public class BrowserSecurityBeanConfig {

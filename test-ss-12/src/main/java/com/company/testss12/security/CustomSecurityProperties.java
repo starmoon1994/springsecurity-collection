@@ -9,7 +9,8 @@ public class CustomSecurityProperties {
     // 登录交互类型  JSON:全程使用json进行数据交互   HTML_REDIRECT 页面跳转
     public static final String loginResponseType = "JSON";
     public static final String formLogin_loginPage = "/needlogin";
-    public static final String formLogin_loginProcessingUrl = "/login";
+    public static final String formLogin_loginProcessingUrl = "/authentication/form";
+//    public static final String formLogin_loginProcessingUrl = "/login";
     public static final String formLogin_successForwardUrl = "/login";
     public static final String formLogin_usernameParameter = "username";
     public static final String formLogin_passwordParameter = "password";

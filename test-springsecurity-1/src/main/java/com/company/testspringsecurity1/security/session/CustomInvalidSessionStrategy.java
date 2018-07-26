@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @author zhailiang
+ * @author starmoon1994
  *
  */
 public class CustomInvalidSessionStrategy extends AbstractSessionStrategy implements InvalidSessionStrategy {
