@@ -2,7 +2,6 @@ package com.company.testss13.security.validate.code.image;
 
 import com.company.testss13.security.CustomSecurityProperties;
 import com.company.testss13.security.validate.code.ValidateCodeGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.ServletRequestUtils;
 import org.springframework.web.context.request.ServletWebRequest;
 
@@ -16,27 +15,14 @@ import java.util.Random;
 public class ImageCodeGenerator implements ValidateCodeGenerator {
     // 验证码长度
     private static final int codeLength = 4;
+    // 图片默认宽度
     private static final int defaultWidth = 60;
+    // 图片默认高度
     private static final int defaultHeight = 25;
 
-
-    /**
-     * 系统配置
-     */
-    @Autowired
-    private CustomSecurityProperties securityProperties;
-
-    /*
-     * (non-Javadoc)
-     *
-     * @see
-     * com.company.testss13.security.core.validate.code.ValidateCodeGenerator#generate(org.
-     * springframework.web.context.request.ServletWebRequest)
-     */
     @Override
     public ImageCode generate(ServletWebRequest request) {
 
-        //TODO:配置化
         int width = ServletRequestUtils.getIntParameter(request.getRequest(), "width",
                 defaultWidth);
         int height = ServletRequestUtils.getIntParameter(request.getRequest(), "height",
@@ -74,10 +60,6 @@ public class ImageCodeGenerator implements ValidateCodeGenerator {
 
     /**
      * 生成随机背景条纹
-     *
-     * @param fc
-     * @param bc
-     * @return
      */
     private Color getRandColor(int fc, int bc) {
         Random random = new Random();
@@ -92,14 +74,4 @@ public class ImageCodeGenerator implements ValidateCodeGenerator {
         int b = fc + random.nextInt(bc - fc);
         return new Color(r, g, b);
     }
-
-    public CustomSecurityProperties getSecurityProperties() {
-        return securityProperties;
-    }
-
-    public void setSecurityProperties(CustomSecurityProperties securityProperties) {
-        this.securityProperties = securityProperties;
-    }
-
-
 }

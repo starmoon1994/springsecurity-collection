@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.company.testss13.security.validate.code;
 
 
@@ -27,7 +25,7 @@ public class ValidateCodeBeanConfig {
 	@ConditionalOnMissingBean(name = "imageValidateCodeGenerator")
 	public ValidateCodeGenerator imageValidateCodeGenerator() {
 		ImageCodeGenerator codeGenerator = new ImageCodeGenerator();
-		codeGenerator.setSecurityProperties(securityProperties);
+//		codeGenerator.setSecurityProperties(securityProperties);
 		return codeGenerator;
 	}
 	

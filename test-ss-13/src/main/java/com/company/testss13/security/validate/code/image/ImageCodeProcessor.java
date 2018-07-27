@@ -23,10 +23,7 @@ public class ImageCodeProcessor extends AbstractValidateCodeProcessor<ImageCode>
     protected void send(ServletWebRequest request, ImageCode imageCode) throws Exception {
         BufferedImage codeImage = imageCode.getImage();
         ServletOutputStream outputStream = request.getResponse().getOutputStream();
-
         ImageIO.write(codeImage, "JPEG", outputStream);
-
-        System.out.println("ssss");
     }
 
 }

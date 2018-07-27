@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.company.testspringsecurity1.security.support;
 
 /**

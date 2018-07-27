@@ -1,6 +1,3 @@
-/**
- *
- */
 package com.company.testss13.security.validate.code.image;
 
 import com.company.testss13.security.validate.code.ValidateCode;

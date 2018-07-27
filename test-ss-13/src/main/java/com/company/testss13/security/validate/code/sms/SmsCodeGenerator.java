@@ -1,6 +1,4 @@
-/**
- * 
- */
+
 package com.company.testss13.security.validate.code.sms;
 
 
